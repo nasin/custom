@@ -1,0 +1,149 @@
+<script type="text/javascript">
+		
+	jQuery(document).ready(function(){
+		jQuery("#print_plan a").click(function(e) {
+			e.preventDefault();
+			printElem({ leaveOpen: true, printMode: 'popup',overrideElementCSS: ['/_css/custom/printstyles.css']});
+			try{_$vmst_vmucustom_printplan();} catch(err){;}
+			callFloodlight_new('3717615','virgi536','Virgi003');
+			return false;
+		});
+	});
+	
+	function printElem(options){
+		var print_html ='';
+			
+		print_html += '<div id="mainContent">';
+		print_html += '<div id="logo_for_print">';
+		print_html += '<img src="/_img/2012/vmu-top-logo.png" alt="Virgin Mobile" />';
+		print_html += '</div>';
+		//print_html += '<h4 style="font-size:1.6em;padding-bottom:5px;font-weight:bold">';
+		//print_html += $j('#account_identity').html() + '</h4>';
+		print_html += jQuery('#plan_box').html();
+		print_html += '<div id="legal_stuff" style="margin-top:10px;font-size:0.7em">';
+		print_html += '&#174;Virgin Mobile, USA 2002-2014 All Rights Reserved</div>';
+		jQuery('#toPrint').html(print_html);
+		jQuery('#toPrint').printElement(options);
+	}
+</script>
+
+<script language="javascript" type="text/javascript">
+    try{_$vmst("VM  Custom: What Is Custom: Great Value");} catch(err){;}
+</script>
+	
+	<div id="toPrint"><!-- print plan goes here --></div> 
+    
+      
+	<div ng-controller="CarouselController"> 
+		<header class="container">
+        	
+             <div class="row">
+            	<div class="col-md-12">
+                    <div class="intro">
+                        <h1>Great Value</h1>
+                        <p>The power is in your hand to control your wireless spending. Here's how to build your own:</p>
+                    </div>
+                </div>
+               
+            </div>
+		</header>
+        <div class="step" id="step1">
+			<div class="container">
+            
+				<div class="intro">
+					<h3>Step 1</h3>
+					<p>Select the number of people on your plan</p>
+					<p style="color:#cc0000">($6.98 per additional line)</p>
+				</div>
+				<div id="number_of_people">
+					<div group-animator people="1" slider-action="updateData()" class="people_box selected">1</div>
+					<div group-animator people="2" slider-action="updateData()" class="people_box">2</div>
+					<div group-animator people="3" slider-action="updateData()" class="people_box">3</div>
+					<div group-animator people="4" slider-action="updateData()" class="people_box">4</div>
+					<div group-animator people="5" slider-action="updateData()" class="people_box">5</div>
+				</div>
+				<div id="people" class="people1">people</div>
+			</div>
+		</div>
+		<div class="step" id="step2">
+			<div class="container wrapper">
+				<div class="intro">
+					<h3>Step 2</h3>
+					<p>Use the phone to build your plan</p>
+				</div>
+				<div id="plan_box">
+					<div id="plan_summary">
+						<h5>Monthly Plan</h5>
+						<h2 id="monthly_price">{{monthly_price | currency}}</h2>
+					</div>
+					<div id="plan_increments">
+						<ul>
+							<li id="talk_increment">
+								<div class="icon">Talk</div>
+								<div class="increment" style=""><span id="small_mins">{{carousels[0].increments[visible_talk.val].units}} Mins</span></div>
+								</li>
+							<li id="text_increment">
+								<div class="icon">Text</div>
+								<div class="increment"><span id="small_texts">{{carousels[1].increments[visible_text.val].units}} Texts</span></div>
+								</li>
+							<li id="data_increment">
+								<div class="icon">Data</div>
+							  <div class="increment"><span id="small_data">{{carousels[2].increments[visible_data.val].units}} MB Data</span></div>
+							</li>
+						</ul>
+					</div>
+					<div id="plan_info">
+						<strong>Customize your talk, text and data to fit your lifestyle:</strong>
+						<ul>
+							<li>Adjust your plan as often as you would like</li>
+							<li>Instantly share with your family &#8212; give them all or just a little &#8212; it's up to you</li>
+							<li>Revolutionary parental control features</li>
+							<li>Great coverage on the Nationwide Sprint Network and no contract</li>
+						</ul>
+
+						<strong>Tip! Grab your current bill to help estimate your plan.</strong>
+					</div>
+					<div id="print_plan">
+						<a href="#">// Print This Plan</a>
+					</div>
+				</div>
+			
+			  <div ng-repeat="item in carousels">
+			    <div id="{{item.id}}" class="jcarousel-wrapper" key="{{$index}}">
+			      <div slider-control direction="prev" slider-action="updateData()" class="jcarousel-control-prev inactive"><a class="jcarousel-button-prev"><!--.--></a></div> 
+			      <div class="jcarousel" style="border:1px solid #000000;">
+			        <ul id="{{item.id + '-list'}}" slider-action="updateData()" animate-on-load="{{visible_items[item.id]}}" class="sliderlist">
+			          <li ng-repeat="increment in item.increments" class="scroller-carousel-item">
+			            <div class="pane" key="{{$index}}" value="{{increment.minutes}}">
+			              <div class="detailsWrapper">
+			                <div class="details">
+			                  <div class="short-description">{{increment.units}} {{item.label}}</div>
+			                  <div class="price">{{increment.price/100 | currency}}</div>
+			                </div>
+			              </div>
+			            </div>
+			          </li>    
+			          
+			        </ul>
+			      </div>
+			      <div slider-control direction="next" slider-action="updateData()" class="jcarousel-control-next">
+			        <a class="jcarousel-button-next"><!--.--></a>
+			        <div class="pane">
+			          <div class="detailsWrapper">
+			            <div class="details">
+			              <div class="short-description">{{item.increments[visible_item+1].units}} {{item.label}}</div>
+			              <div class="price">{{item.increments[visible_item+1].price/100 | currency}}</div>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+	         </div>
+		</div>
+	</div>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+	try{add();} catch(err){;}
+	});
+</script>

@@ -1,0 +1,117 @@
+<!DOCTYPE html><html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:bv="http://www.bazaarvoice.com/xs/PRR/SyndicationFeed/4.5" class="no-js" lang="en">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<title>Virgin Mobile USA </title>
+
+ <link href="/custom/_css/custom/bootstrap/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="/custom/_css/fonts.css" />
+<link rel="stylesheet" href="/custom/_css/custom/custom.css" />
+	    
+	 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	 <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    
+    <![endif]-->
+</head>
+<body class="phoneGallery">
+	
+			<div class="galleryContainer">
+				<ul class="galleryDisplay">
+					<li id="phone1" class="active ">
+					<img src="/custom/_img/custom/phones/lg-unify/angle1.png"></li>
+					<li id="phone2" class="">
+					<img src="/custom/_img/custom/phones/lg-unify/angle2.png"></li>
+					<li id="phone3" class="">
+					<img src="/custom/_img/custom/phones/lg-unify/angle3.png"></li>
+					
+				</ul>
+				<ul class="galleryThumbs">
+					<li id="phone1Thmb" class="active ">
+					<a href="#" id="phone-detail-side-1Thmb" rel="phone1" style="background-image: url('/custom/_img/custom/phones/lg-unify/thumb1.png');">Angle 1</a>
+					</li>
+					<li id="phone2Thmb" class="">
+					<a href="#" id="phone-detail-side-2Thmb" rel="phone2" style="background-image: url('/custom/_img/custom/phones/lg-unify/thumb2.png');">Angle 2</a>
+					</li>
+					<li id="phone3Thmb" class="">
+					<a href="#" id="phone-detail-side-3Thmb" rel="phone3" style="background-image: url('/custom/_img/custom/phones/lg-unify/thumb3.png');">Angle 3</a>
+					</li>
+				
+				</ul>
+			</div>
+			<div id="phone_features">
+				<h1>LG Unify</h1>
+					<ul class="features">
+						<li>2GHz Processor</li>
+						<li>16 mAh Battery</li>
+						<li>External memory support up to 32GB</li>
+						<li>Display 4.0" IPS </li>
+						<li>Stereo Bluetooth 4.0</li>
+						<li>4.0" IPS Touchscreen Display</li>
+						<li>5.0 MP Camera with Flash and HD Video Capture</li>
+						<li>Front Facing Camera for Video Chat</li>
+						<li>Android 4.1 Jelly Bean</li>
+					</ul>
+				<div id="buyinfo">
+					<div id="price_and_store" class="row">
+						<span class="price">$129.99</span>
+						<img src="/custom/_img/custom/only-at-walmart.gif">
+					</div>
+					<div id="getitnow" class="row"><a class="btn btn-default" href="http://www.walmart.com/ip/38041380" target="_blank">Get It Now</a></div>
+				</div>
+			</div>
+	
+	<div id="bottom_pattern"><!-- bottom pattern --></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+	  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script>
+		
+var zIndexMax = 10;
+
+jQuery(document).ready(function() {
+	
+	// Grab photo id from url if available
+	try {
+		var galleryID = getUrlVars()["show"];
+		if( galleryID.length > 0 )
+			galleryTransition("#"+galleryID);
+	} catch(err){}
+
+	jQuery('ul.galleryThumbs li').on('click', 'a:not(active)', function(evt){
+		evt.preventDefault();
+		var galleryID = jQuery(this).attr('rel');
+		galleryTransition(galleryID);
+	});
+});
+
+function galleryTransition( galleryID ) {
+	
+	
+	// Switch Active Thumb
+	jQuery('ul.galleryThumbs li.active').removeClass('active');
+	jQuery('ul.galleryThumbs li#'+galleryID+"Thmb").addClass('active');
+	
+	// Switch Full View
+	jQuery('ul.galleryDisplay li.active').removeClass('active');
+	jQuery('ul.galleryDisplay li#'+galleryID).addClass('active');
+	
+	// fix for IE - using display:none/block while the 360 swf is loading makes it crap out while switching between the 360 and photo views
+	//jQuery('ul.galleryDisplay li#'+galleryID).css('visibility', 'visible');
+}
+
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+	</script>
+</body>
+</html>

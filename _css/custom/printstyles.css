@@ -1,0 +1,101 @@
+*{
+	box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+#toPrint{
+	font-size:1em;
+	font-family:Arial, Helvetica, sans-serif;
+	
+}
+
+#logo_for_print{
+	margin-bottom:10px
+}
+
+#logo_for_print img{
+	width:80px;
+}
+
+#plan_summary{
+	border-width:1px 1px 0px 1px;
+	border-style: solid;
+	border-color: #000;
+	padding:10px;
+	width:684px;
+}
+
+#plan_summary h5{
+	font-size:.8em;
+	margin:0px;
+	padding:0px;
+}
+#plan_summary h2{
+	font-size:3em;
+	margin:0px;
+	padding:0px;
+}
+
+
+#plan_increments{
+	
+	width:684px;
+	overflow:hidden;
+}
+
+#plan_increments ul{
+	list-style: none outside none;
+	padding:0px;
+	margin:0px;
+}
+#plan_increments ul li{
+	float: left;
+    border-width:1px 0px 1px 1px;
+	border-style: solid;
+	border-color: #000;
+    padding:9px;
+    
+	
+}
+#plan_increments .increment {
+    font-size: 2em;
+    text-align: left;
+}
+#plan_increments ul li#talk_increment{
+	 width:228px;
+	
+}
+#plan_increments ul li#text_increment{
+	width:228px;
+}
+#plan_increments ul li#data_increment{
+	width:228px;
+	border-right:1px solid #000;
+}
+
+#plan_info{
+	border-width:0px 1px 1px 1px;
+	border-style: solid;
+	border-color: #000;
+	padding:10px;
+	width:684px;
+}
+
+#plan_info ul{
+	
+}
+
+
+#plan_info ul li{
+	
+}
+
+#print_plan{
+	display:none;
+}
+

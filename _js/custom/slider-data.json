@@ -1,0 +1,78 @@
+[{
+	"key":0,
+	"id":"talk",
+	"label":"Mins",
+	"increments":[
+		{ "units":0, "price":0 },
+		{ "units":250, "price":300 },
+		{ "units":500, "price":600 },
+		{ "units":750, "price":800 },
+		{ "units":1000, "price":950 },
+		{ "units":1250, "price":1150 },
+		{ "units":1500, "price":1300 },
+		{ "units":1750, "price":1450 },
+		{ "units":2000, "price":1500 },
+        { "units":2250, "price":1600 },
+        { "units":2500, "price":1750 },
+        { "units":2750, "price":1900 },
+        { "units":3000, "price":2100 },
+        { "units":3500, "price":2450 },
+        { "units":4000, "price":2800 },
+        { "units":4500, "price":3150 },
+        { "units":5000, "price":3500 }
+		]
+	},
+	{
+	"key":1,
+	"id":"text",
+	"label":"Texts",
+	"increments":[
+		{ "units":20, "price":0 },
+		{ "units":250, "price":250 },
+		{ "units":500, "price":450 },
+		{ "units":750, "price":650 },
+		{ "units":1000, "price":800 },
+		{ "units":1250, "price":900 },
+		{ "units":1500, "price":1000 },
+		{ "units":1750, "price":1100 },
+		{ "units":2000, "price":1200 },
+		{ "units":2250, "price":1300 },
+		{ "units":2500, "price":1350 },
+		{ "units":2750, "price":1400 },
+		{ "units":3000, "price":1500 },
+		{ "units":3500, "price":1700 },
+		{ "units":4000, "price":1900 },
+		{ "units":4500, "price":2100 },
+		{ "units":5000, "price":2300 }
+
+		]
+	},
+	{
+	"key":2,
+	"id":"data",
+	"label":"MB",
+	"increments":[
+		{ "units":0, "price":0 },
+		{ "units":20, "price":140 },
+		{ "units":250, "price":800 },
+		{ "units":500, "price":1350 },
+		{ "units":750, "price":1600 },
+		{ "units":1024, "price":1850 },
+		{ "units":1536, "price":2400 },
+		{ "units":2048, "price":2800 },
+		{ "units":2560, "price":3150 },
+		{ "units":3072, "price":3400 },
+		{ "units":3584, "price":3750 },
+		{ "units":4096, "price":4100 },
+		{ "units":4608, "price":4350 },
+		{ "units":5120, "price":4600 },
+		{ "units":5632, "price":4800 },
+		{ "units":6144, "price":5250 }
+		]
+	}
+	
+
+]
+          
+     
+     
